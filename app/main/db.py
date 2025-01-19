@@ -24,8 +24,7 @@ async def create_short_link(lnk_obj: schemas.Link):
         if fetched: 
             return {'status': 'OK', 'shorted': SERVICE_LINK + fetched.id, 'views': fetched.views}
         
-        obj = LinksTable(id=key, link=lnk_obj.link, limit=lnk_obj.limit)
-        views, key = obj.views, obj.id
+        obj = LinksTable(id=key, link=lnk_obj.link, limit=lnk_obj.limit, views=0)
         
         db.add(obj)
         await db.commit()
