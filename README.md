@@ -12,7 +12,7 @@
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/xcraitex/tiny-link-microservice
+git clone https://github.com/XCraiteX/tiny-link-microservice.git
 ```
 
 ### 2. Replace links in `settings.py`
