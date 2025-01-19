@@ -1,7 +1,6 @@
-import requests
 import random
 import string
-
+import re
 
 async def generate_key():
     symbols = string.ascii_letters + string.digits
@@ -11,11 +10,10 @@ async def generate_key():
     return key
 
 async def valid_link(link):
-    try:
-        response = requests.get(link)
+    reg = '(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])'
 
-        if response.status_code == 200:
-            return True
-        return False
-    except: return False
-
+    res = re.match(reg, link)
+    if res:
+        return True
+            
+    return False
