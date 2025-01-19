@@ -50,12 +50,13 @@ location /lnk/ {
 
 ```json
 {
-    "link": "your link here" ,// required!
-    "limit": int
+    "link": "your_link_here" ,
+    "limit": 5
 }
 ```
   
-> **if you specify the limit parameter, your link will have a traffic limit.**
+> **The limit parameter is optional, but if you specify it, a traffic limit will be imposed on your link   
+> (limit - max redirects)**
 
 ###  > Response
 
@@ -65,7 +66,7 @@ location /lnk/ {
 {
     "status": "OK",
     "shorted": "received_link",
-    "views": int
+    "views": 6
 }
 ```
 
