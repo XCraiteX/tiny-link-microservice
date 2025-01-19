@@ -27,7 +27,8 @@ SERVICE_LINK = 'http://localhost:8000/lnk/'
 ### 3. Run server
 
 ```bash
-uvicorn --port 3400  
+cd app
+uvicorn api:app --port 3400  
 ```
 
 ### 4. Setup nginx 
